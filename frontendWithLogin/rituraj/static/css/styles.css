@@ -1,0 +1,58 @@
+body{
+	font: 20px/1.5 "Courier New", Courier, monospace;
+	padding: inherit;
+	background-color: #fffffff;
+}
+
+.container{
+	width:100%;
+	margin: auto;
+	overflow: hidden;
+}
+
+header{
+	background:white;#35434a
+	border-bottom:#448AFF 3px solid;
+	height:120px;
+	width:100%;
+	padding-top:30px;
+}
+
+.main-header{
+			text-align:center;
+			background-color: #5e5e8e;
+			height:100px;
+			width:100%;
+			margin:0px;
+		}
+#brandname{
+	float:left;
+	font-size:25px;
+	color: #fff;
+	margin: 10px;
+}
+
+header h2{
+	text-align:center;
+	color:#fff;
+
+}
+
+
+
+.btn-info {
+	background-color: #eaeaea;
+	height:40px;
+	width:200px;
+	border-radius: 20px;
+	} /* #53cc2b */
+.btn-info:hover {background: white;}
+
+
+.resultss{
+	border-radius: 15px 50px;
+    background: #345fe4;
+    padding: 20px; 
+    width: 200px;
+    height: 150px;
+}

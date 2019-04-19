@@ -32,10 +32,10 @@ router.post('/patient',function(req,res){
         res.redirect('/user-login')
     }); 
 })
-router.get('/data',function(req,res){
-    var ans = req.user.firstname + " " + req.user.lastname;
-    res.json(ans);
-})
+// router.get('/data',function(req,res){
+//     var ans = req.user.firstname + " " + req.user.lastname;
+//     res.json(ans);
+// })
 router.get('/logout',function (req,res) {
 
     req.logout();

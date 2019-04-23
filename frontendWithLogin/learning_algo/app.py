@@ -10,7 +10,9 @@ from fastai.vision import *
 from PIL import ImageFile
 
 #load data 
+#path to the initaiter cancer cell images
 PATH_ts1 = Path('../data/CombinedImages')
+#the cell images are transformed, and data is obtained in a matrix format
 tfms = get_transforms(flip_vert = True)
 data = (ImageItemList.from_folder(PATH_ts1) 
         .random_split_by_pct(valid_pct=0.1)
@@ -22,11 +24,12 @@ data = (ImageItemList.from_folder(PATH_ts1)
 
 ImageFile.LOAD_TRUNCATED_IMAGES = True
 
-#load model
+#model created from initiater images and then the actual training weights
+#at 30it_0401 are loaded into the cnn model
 learn = create_cnn(data, models.resnet18, metrics =accuracy)
 learn.load('30it_0401')
 
-
+#flask used for showing the predicted result on the website
 app = Flask(__name__)
 
 
@@ -55,6 +58,7 @@ def predict():
                                                                                         #of uploaded file
                                                                                         #(although this will eat space)
         #prediction
+        #image 
         img = open_image('instance/images/pic.jpeg')
         output = str(learn.predict(img))
         ans = output.split(' ')[1]
